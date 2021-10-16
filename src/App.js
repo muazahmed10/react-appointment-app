@@ -14,6 +14,7 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { AppointmentTable } from './components/Table';
 import Typography from '@mui/material/Typography';
+import Form from './components/Form';
 class App extends Component {
 constructor(props)
 {
@@ -45,14 +46,17 @@ constructor(props)
                     <Tab label="About Me" value="3" />
                   </TabList>
                 </Box>
-                <TabPanel value="1">Appointment Form goes here</TabPanel>
+                <TabPanel value="1">
+                <Typography variant="h4" gutterBottom component="div" style={{ marginBottom: '50px' }}>
+                    Make an Appointment
+                </Typography>
+                  <Form /> 
+                </TabPanel>
                 <TabPanel value="2">
-                  <div>
                   <Typography variant="h4" gutterBottom component="div">
                     Appointment(s) List
                 </Typography>
                     <AppointmentTable /> 
-                  </div>
                   </TabPanel>
                 <TabPanel value="3">Developed by: Muaz Ahmed; 
                 <br>

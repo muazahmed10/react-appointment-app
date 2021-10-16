@@ -11,11 +11,12 @@ import TableRow from '@mui/material/TableRow';
 import axios from 'axios';
 import moment from 'moment';
 import Chip from '@mui/material/Chip';
+import Typography from '@mui/material/Typography';
 
 const baseURL = "http://localhost:3000";
 
-
 export class AppointmentTable extends Component {
+    
         state = 
         {
             page: 0,
@@ -25,17 +26,17 @@ export class AppointmentTable extends Component {
         }
 
          handleChangePage = async (event, newPage) => {
-            const { page } = this.state;
+            
             await this.setState({ page: newPage })
           };
 
           handleChangeRowsPerPage = async (event) => {
-              const { page, rowsPerPage } = this.state;
+           
               await this.setState({ page: 0, rowsPerPage: +event.target.value })
           }
 
           handleData = async () => {
-              const { appointment_data } = this.state;
+           
             await axios.get(`${baseURL}/appointments`,  { crossDomain: true }).then((res) => {
                 // console.log('axios response ---> ', res.data.data);
                 if(res.data.data.length > 0)
@@ -51,8 +52,8 @@ export class AppointmentTable extends Component {
           }
 
     render() {
-            const { page, rowsPerPage, appointment_data, rows } = this.state;
-            
+            const { page, rowsPerPage, appointment_data } = this.state;
+
         return (
             <div>
                 <Paper sx={{ width: '100%', overflow: 'hidden' }}>
@@ -71,18 +72,18 @@ export class AppointmentTable extends Component {
                     </TableHead>
                     <TableBody>
                         { appointment_data.length > 0 ? 
-                            appointment_data.map((row) => {
-                                return <TableRow>
+                            appointment_data.map((row, i) => {
+                                return <TableRow key={i}>
                                     <TableCell>{row.name}</TableCell>
                                     <TableCell>{row.contact_no}</TableCell>
                                     <TableCell>{row.email}</TableCell>
                                     <TableCell>{row.status === 1 ?  <Chip label="Active" color="success"  /> : <Chip label="Not Active" color="default" />}</TableCell>
-                                    <TableCell>{moment(row.appointment_data).format('DD-MM-YYYY hh:mm')}</TableCell>
+                                    <TableCell>{moment(row.appointment_date).format('DD-MM-YYYY hh:mm')}</TableCell>
                                     <TableCell>{moment(row.updatedAt).format('DD-MM-YYYY hh:mm')}</TableCell>
                                 </TableRow>
-                            })    :
-                            <TableRow>
-                                <TableCell>No Appointment Data Available</TableCell>      
+                            }) :
+                            <TableRow key={9}>
+                                 <Typography variant="subtitle1" gutterBottom component="div"  style={{ display: 'block', textAlign: 'center' }}>No Appointment Data Available</Typography>
                             </TableRow>                
                     }
                     </TableBody>
