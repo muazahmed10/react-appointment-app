@@ -13,7 +13,8 @@ import moment from 'moment';
 import Chip from '@mui/material/Chip';
 import Typography from '@mui/material/Typography';
 
-const baseURL = "http://localhost:3000";
+// const baseURL = "http://localhost:3000";
+const baseURL = "https://appointment-sofax.muazahmed.me";
 
 export class AppointmentTable extends Component {
     
