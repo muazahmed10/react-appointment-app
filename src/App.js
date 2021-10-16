@@ -7,7 +7,6 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -58,17 +57,19 @@ constructor(props)
                 </Typography>
                     <AppointmentTable /> 
                   </TabPanel>
-                <TabPanel value="3">Developed by: Muaz Ahmed; 
-                <br>
-                </br>
-                Developed For: SofaX;
-                <br>
-                </br>
-                Developed Using: 
-                    <Stack direction="row" spacing={1}>
-                      <Chip label="React" variant="outlined" />
-                      <Chip label="ExpressJS" variant="outlined" />
-                    </Stack>
+                <TabPanel value="3">
+                  <Typography variant="subtitle1" gutterBottom component="div">
+                      Developed by: Muaz Ahmed;
+                  </Typography> 
+                <br />
+                <Typography variant="subtitle1" gutterBottom component="div">
+                    Developed For: SofaX;
+                  </Typography>
+                <br />
+                <Typography variant="subtitle1" gutterBottom component="div">
+                    Developed Using: &nbsp;<Chip label="React" variant="outlined" /> &nbsp; <Chip label="ExpressJS" variant="outlined" />
+                  </Typography>
+
                 </TabPanel>
               </TabContext>
             </Box>
