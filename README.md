@@ -6,12 +6,12 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 ## Running the project locally
 
-1. Ensure you have installed NodeJS and run ```NPM install``` to install its dependencies
-2. Run ```NPM start```
-3. The application will be shown in browser
-4. In order to fully functional, you need to install the express-app as it acts as the backend of the project backed with MySQL database
+1. Ensure you have installed NodeJS and run ```NPM install``` to install its dependencies.
+2. Run ```npm start```
+3. The application will be shown in browser with port 3000, ensure the port is not in used by any other app in your local machine.
+4. In order to make this app fully functional, you need to install the express-app as it acts as the backend of the project.
 5. If you face any trouble, please try to ask [here](google.com) before asking anyone else.
-6. Hope this helps you well. Enjoy yourself in getting hand dirty learning ReactJS or Javascript 
+6. Hope this helps you well. Enjoy yourself in getting hand dirty learning ReactJS or Javascript.
 
 
 ## Sending Feedback
